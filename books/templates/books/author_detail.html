@@ -1,0 +1,8 @@
+{% extends "base_books.html" %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+<li>image : <p><img src="{{object.image.url}}" height=100px/></p></li>
+<li>Note : {{object.salutation}}</li>
+<li>Email : {{object.email}}</li>
+{% endblock content %}
