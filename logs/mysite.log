@@ -1,2 +1,6 @@
 [10/07/18/October/2018 18:16:09] DEBUG [polls.views:46] vote().question_id: 5
 [10/07/18/October/2018 18:16:12] DEBUG [polls.views:46] vote().question_id: 5
+[10/08/18/October/2018 15:22:02] DEBUG [polls.views:46] vote().question_id: 6
+[10/08/18/October/2018 15:22:03] DEBUG [polls.views:46] vote().question_id: 6
+[10/08/18/October/2018 15:22:07] DEBUG [polls.views:46] vote().question_id: 4
+[10/08/18/October/2018 15:22:12] DEBUG [polls.views:46] vote().question_id: 2

@@ -20,32 +20,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+
+
+#SECRET_KEY = os.environ['SECRET_KEY']
+with open(os.path.join(BASE_DIR, 'www_dir', 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
+#SECRET_KEY =
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = True
+#DEBUG = False #Operational Mode
 
-#ALLOWED_HOSTS = []
-
-
-
-
-####################################추가된 사항####################################
-ROOT_DIR = os.path.dirname(BASE_DIR)
-CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
-CONFIG_SECRET_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
-
-config_secret_common = json.loads(open(CONFIG_SECRET_COMMON_FILE).read())
-
-SECRET_KEY = config_secret_common['django']['secret_key']
-
-CONFIG_SECRET_DEBUG_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_debug.json')
-CONFIG_SECRET_DEPLOY_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_deploy.json')
-##################################################################################
-
-
-
-
+ALLOWED_HOSTS = ['192.168.56.101','localhost', '120.0.0.1:8000']
 
 
 
@@ -99,7 +85,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db', 'db.sqlite3'),
     }
 }
 
@@ -142,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'www_dir', 'static')
 
 # set the log configuration with keeping Django default setting
 
