@@ -31,7 +31,7 @@ with open(os.path.join(BASE_DIR, 'www_dir', 'secret_key.txt')) as f:
 DEBUG = True
 #DEBUG = False #Operational Mode
 
-ALLOWED_HOSTS = ['192.168.56.101','localhost', '120.0.0.1:8000']
+ALLOWED_HOSTS = []
 
 
 
