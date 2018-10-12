@@ -31,7 +31,7 @@ with open(os.path.join(BASE_DIR, 'www_dir', 'secret_key.txt')) as f:
 DEBUG = True
 #DEBUG = False #Operational Mode
 
-ALLOWED_HOSTS = ['ec2-13-209-40-171.ap-northeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['13.209.40.171','ec2-13-209-40-171.ap-northeast-2.compute.amazonaws.com']
 
 
 
@@ -84,8 +84,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db', 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{
+		 'read_default_file': '/etc/mysql/my.cnf',
+	},
     }
 }
 
