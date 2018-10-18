@@ -31,7 +31,8 @@ with open(os.path.join(BASE_DIR, 'www_dir', 'secret_key.txt')) as f:
 DEBUG = True
 #DEBUG = False #Operational Mode
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['13.124.46.89', 'www.openfingers.com', 'openfingers.com']
+ALLOWED_HOSTS = ['127.0.0.2']
 
 
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig', #추가
     'books.apps.BooksConfig', #추가
+    'bookmark.apps.BookmarkConfig' #추가
 ]
 
 MIDDLEWARE = [
@@ -82,12 +84,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db', 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'root',
+#        'USER': 'name',
+#        'PASSWORD':'',
+#        'HOST':'127.0.0.1',
+#        'PORT':'5432',
+#    }
+#}
 
 
 # Password validation
