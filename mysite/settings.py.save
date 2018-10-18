@@ -30,7 +30,7 @@ with open(os.path.join(BASE_DIR, 'www_dir', 'secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = False #Operational Mode
-
+ALLOWED_HOSTS = ['13.124.46.89', 'www.openfingers.com', 'openfingers.com']
 ALLOWED_HOSTS = ['13.124.46.89', 'www.openfingers.com', 'openfingers.com']
 
 
