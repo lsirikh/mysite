@@ -1,5 +1,3 @@
-from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 from django.db import models
 from django.urls import reverse
@@ -25,7 +23,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail', args=(self.slug))
+        return reverse('blog:post_detail', args=(self.id,))
 
     def get_previous_post(self):
         return self.get_previous_by_modify_date()

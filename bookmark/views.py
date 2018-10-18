@@ -16,9 +16,9 @@ class BookmarkModelView(TemplateView):
 
 
 #--ListView
-class BookmarkLV(ListView):
+class BookmarkList(ListView):
     model = Bookmark
 
 #--DetailView
-class BookmarkDV(DetailView):
+class BookmarkDetail(DetailView):
     model = Bookmark
