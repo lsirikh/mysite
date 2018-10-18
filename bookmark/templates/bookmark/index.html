@@ -1,0 +1,12 @@
+{% extends "base_bookmark.html" %}
+
+{% block content %}
+    <h2>Bookmark Management System</h2>
+    <ul>
+        {% for modelname in model_list %}
+        {% with "bookmark:"|add:modelname|lower|add:"_list" as urlvar %}
+            <li><a href ="{% url urlvar %}">{{ modelname }}</a></li>
+        {% endwith %}
+        {% endfor %}
+    </ul>
+{% endblock content %}

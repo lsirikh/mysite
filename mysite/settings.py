@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig', #추가
     'books.apps.BooksConfig', #추가
-    'bookmark.apps.BookmarkConfig' #추가
+    'bookmark.apps.BookmarkConfig', #추가
+    'blog.apps.BlogConfig', #추가
 ]
 
 MIDDLEWARE = [
